@@ -1,0 +1,91 @@
+/* style.css */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  background-color: rgb(48, 178, 61);
+  }
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+.navbar {
+  background-color: rgb(48, 178, 61);
+  overflow: hidden;
+}
+
+.navbar-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-item,
+.navbar-item-active {
+  flex: 1;
+}
+
+.navbar-item a,
+.navbar-item-active a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+/* Styling for regular navbar items */
+.navbar-item a {
+  color: white;
+}
+
+/* Styling for active navbar item (Lantai G) */
+.navbar-item-active a {
+  color: rgb(246, 255, 0);
+  font-weight: bold;
+}
+
+/* Hover effect for all navbar items */
+.navbar-item a:hover,
+.navbar-item-active a:hover {
+  background-color: #999696;
+}
+
+.swiper-container {
+  width: 400px;
+  height: 300px;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  font-family: poppins;
+  border-radius: 5px;
+}
+
+.picture-container {
+  position: relative;
+}

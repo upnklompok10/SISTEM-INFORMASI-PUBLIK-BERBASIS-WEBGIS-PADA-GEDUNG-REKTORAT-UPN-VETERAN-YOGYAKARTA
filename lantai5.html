@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Example</title>
+    
+    <h1 style="text-align:center; margin-bottom:0;">INFORMASI RUANGAN GEDUNG REKTORAT</h1>
+    <h2 style="text-align:center; margin-top:0;">Universitas Pembangunan Nasional "Veteran" Yogyakarta</h2>
+      <h style="margin-top: 0;">
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="picture-container">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="/indeximg/L5/ppks .jpg" alt="Ruangan Lain" />
+            <div class="description">Ruang PPKS</div>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="/indeximg/L5/ruang serbaguna.jpg"
+              alt="Ruangan Lain Lagi"
+            />
+            <div class="description">Ruang Serbaguna</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="/indeximg/L5/rs 2.jpg" alt="Ruangan " />
+            <div class="description">Ruang Serbaguna 2</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="/indeximg/L5/rs 3.jpg" alt="Ruangan " />
+            <div class="description">Ruang Serbaguna 3</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="/indeximg/L5/rs 4.jpg" alt="Ruangan " />
+            <div class="description">Ruang Serbaguna 4</div>
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="/indeximg/L5/sidang prog pascasarjana.jpg"
+              alt="Ruangan "
+            />
+            <div class="description">Ruang Sidang Program Pascasarjana</div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const swiper = new Swiper(".swiper-container", {
+          loop: true,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
+</html>
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <!-- Include the CesiumJS JavaScript and CSS files -->
+      <script src="https://cesium.com/downloads/cesiumjs/releases/1.113/Build/Cesium/Cesium.js"></script>
+      <link href="https://cesium.com/downloads/cesiumjs/releases/1.113/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+      <link rel="stylesheet" href="cesium.css">
+    </head>
+    <body>
+           <nav class="navbar">
+      <ul class="navbar-menu">
+        <li class="navbar-item"><a href="index.html">Lantai G</a></li>
+        <li class="navbar-item"><a href="lantai1.html">Lantai 1</a></li>
+        <li class="navbar-item"><a href="lantai2.html">Lantai 2</a></li>
+        <li class="navbar-item"><a href="lantai3.html">Lantai 3</a></li>
+        <li class="navbar-item"><a href="lantai4.html">Lantai 4</a></li>
+        <li class="navbar-item-active"><a href="lantai5.html">Lantai 5</a></li>
+      </ul>
+    </nav>
+      <div id="cesiumContainer"></div>
+      <script type="module">
+    // Grant CesiumJS access to your ion assets
+    Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhZTUxM2JiNy05NDBmLTQwYzAtYWI4Ni1jNmY3YWE3ZWYwMGIiLCJpZCI6MjAwMjM4LCJpYXQiOjE3MDk3OTg5NzZ9.99UasHfZKBL_F4fbfE8ppqwb6GjaQXg-K5itYiWgJiI";
+
+    const viewer = new Cesium.Viewer("cesiumContainer", {
+      terrainProvider: await Cesium.CesiumTerrainProvider.fromIonAssetId(
+        1,
+        ),
+      });
+      viewer.scene.globe.depthTestAgainstTerrain = true;
+
+      try {
+        const tileset = await Cesium.Cesium3DTileset.fromIonAssetId(2572622);
+        viewer.scene.primitives.add(tileset);
+        await viewer.zoomTo(tileset);
+
+     // Apply the default style if it exists
+     const extras = tileset.asset.extras;
+     if (
+      Cesium.defined(extras) &&
+      Cesium.defined(extras.ion) &&
+      Cesium.defined(extras.ion.defaultStyle)
+      ) {
+        tileset.style = new Cesium.Cesium3DTileStyle(extras.ion.defaultStyle);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+     
+      </script>
+     </div>
+    </body>
+    </html>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Navbar Example</title>
+      
+      <h2 style="margin-top:70px; margin-left:20px;">Kelompok 10 | Teknik Geomatika UPN "Veteran" Yogyakarta </h2>
+      <p style="margin-top:-10px; margin-left:20px;">Tiara Alda Megapratiwi (117210006)</p>
+      <p style="margin-top:-10px; margin-left:20px;">Anung Budi Legowo (117210037)</p>
+      <p style="margin-top:-10px; margin-left:20px;">Rendi Defito (117210066)</p>
+
+      <p style="margin-top:60px; margin-left:20px;">Kritik dan saran kunjungi link berikut:</p>
+      <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdLldpYP4WyEKH6TSfMsQQW0YNAvZbDDiRkmQ6Leq_bbnQ0Xg/viewform?usp=pp_url" style="margin-left: 20px">Survei Kepuasan</a></p>
+
+      <p style="margin-left:1050px;">© Copyright 2024. All Rights Reserved</p>
+      <link rel="stylesheet" href="style.css" />
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper/swiper-bundle.min.css"
+      />
+       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </head>
